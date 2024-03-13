@@ -178,7 +178,7 @@ class CardDetails extends React.Component {
 
     return (
       <>
-      <head>
+      {/* <head>
         <title>{`${listing.address} ${listing.city} ${listing.state} ${listing.zip}`}</title>
         <meta
           name="description"
@@ -187,6 +187,14 @@ class CardDetails extends React.Component {
           } ba ${this.renderSqrElementMeta()}`}
         />
         <meta property="og:image" content={listing.photos[0]} />
+        </head> */}
+         <head>
+   <title>page app</title>
+        <meta
+          name="description"
+          content={`test description`}
+        />
+        <meta property="og:image" content="https://ttimages.blob.core.windows.net/property/21e11ce8-e391-4aa5-b872-c94cfbbe45f1.jpg" />
         </head>
 
         <Row className="g-0">
