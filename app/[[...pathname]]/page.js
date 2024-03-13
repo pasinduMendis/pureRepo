@@ -1,7 +1,9 @@
 "use client";
 
 import "regenerator-runtime/runtime";
+import LoginWrapper from "../../components/AppRe";
 import React, { useEffect, useState } from "react";
+import App from "../../components/App";
 
 function Page() {
   const [pathname, setPathname] = useState("");
@@ -19,15 +21,11 @@ function Page() {
 
   return (
     <>
-     <head>
-   <title>page app</title>
-        <meta
-          name="description"
-          content={`test description`}
-        />
-        <meta property="og:image" content="https://ttimages.blob.core.windows.net/property/21e11ce8-e391-4aa5-b872-c94cfbbe45f1.jpg" />
-        </head>
-    test
+      {loading ? (
+        <div>Loading....</div>
+      ) : (
+        <>{pathname === "/" ? <LoginWrapper /> : <App />}</>
+      )}
     </>
   );
 }

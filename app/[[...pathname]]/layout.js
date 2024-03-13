@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import "regenerator-runtime/runtime";
-import "./globals.css";
-import reportWebVitals from "./reportWebVitals";
+import "../globals.css";
+import reportWebVitals from "../reportWebVitals";
 
 // export const metadata = {
 //   title: "Create Next App",
