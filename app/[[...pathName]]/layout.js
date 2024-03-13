@@ -17,10 +17,10 @@ export async function generateMetadata(props) {
   // const previousImages = (await parent).openGraph?.images || [];
 
 {return {
-  title: `test ${response.data.title} ${response.data.city} ${response.data.state} ${response.data.zip}`,
-  description:`${response.data.beds} br | ${
-    response.data.baths
-  } ba ${this.response.squareFootage} sqft`,
+  title: `test ${response.data?.title??"-"} ${response.data?.city??"-"} ${response.data?.state??"-"} ${response.data?.zip??"-"}`,
+  description:`${response.data?.beds??"-"} br | ${
+    response.data?.baths??"-"
+  } ba ${this.response?.squareFootage??"-"} sqft`,
   openGraph: {
     images: [
       response.data.photos[0] ??
