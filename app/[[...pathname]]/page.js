@@ -22,7 +22,7 @@ function Page() {
   return (
     <>
       {loading ? (
-        <div>Loading...</div>
+        <div>Loading....</div>
       ) : (
         <>{pathname === "/" ? <LoginWrapper /> : <App />}</>
       )}
