@@ -20,7 +20,7 @@ function Page() {
 
   return (
     <>
-   <title>Wrappeer</title>
+   <title>page app</title>
         <meta
           name="description"
           content={`test description`}
