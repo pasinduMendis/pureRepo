@@ -16,9 +16,8 @@ export async function generateMetadata(props) {
   // // optionally access and extend (rather than replace) parent metadata
   // const previousImages = (await parent).openGraph?.images || [];
 
-if(response.data){
-  return {
-  title: `${response.data.title} ${response.data.city} ${response.data.state} ${response.data.zip}`,
+{return {
+  title: `test ${response.data.title} ${response.data.city} ${response.data.state} ${response.data.zip}`,
   description:`${response.data.beds} br | ${
     response.data.baths
   } ba ${this.response.squareFootage} sqft`,
@@ -27,20 +26,7 @@ if(response.data){
       response.data.photos[0] ??
         "https://ttimages.blob.core.windows.net/property/ff824ac6-4e3d-40c4-8c6f-f96536d0f59f.jpg",
     ],
-  },
-}
-  }
-  else{
-    return {
-      title: `PURE Listings`,
-      description:`PURE Listings`,
-      // openGraph: {
-      //   images: [
-      //     response.data.photos[0] ??
-      //       "https://ttimages.blob.core.windows.net/property/ff824ac6-4e3d-40c4-8c6f-f96536d0f59f.jpg",
-      //   ],
-      // },
-    }
+  },}
   };
 }
 
