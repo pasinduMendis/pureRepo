@@ -65,7 +65,7 @@ class CardDetails extends React.Component {
   }
 
   openModal = (e, id) => {
-    var newurl = window.location.pathname + "/" + id + "?locationID=" + id;
+    var newurl = window.location.pathname + "?locationID=" + id;
     const newUrlOne = newurl.replaceAll(" ", "-");
     window.history.pushState({ path: newUrlOne }, "", newUrlOne);
     this.setState({ modalShow: true });
@@ -78,7 +78,7 @@ class CardDetails extends React.Component {
   };
   closeModal = () => {
     var newurl = window.location.pathname;
-    const newUrlOne = newurl.split(id)[0].replaceAll(" ", "-");
+    const newUrlOne = newurl.replaceAll(" ", "-");
     window.history.pushState({ path: newUrlOne }, "", newUrlOne);
     this.setState({ modalShow: false });
   };
