@@ -34,7 +34,6 @@ export default function RootLayout({ children, params }) {
           integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA="
           crossOrigin="anonymous"
         />
-        
       </head>
       <body>{children}</body>
     </html>
