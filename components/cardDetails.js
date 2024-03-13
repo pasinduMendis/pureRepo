@@ -186,8 +186,8 @@ class CardDetails extends React.Component {
             listing.baths
           } ba ${this.renderSqrElementMeta()}`}
         />
-        </head>
         <meta property="og:image" content={listing.photos[0]} />
+        </head>
 
         <Row className="g-0">
           <Col lg="5" className="modal-left">
