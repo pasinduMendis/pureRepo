@@ -1341,7 +1341,6 @@ class App extends Component {
 
   render() {
     return (
-      <>
       <EventProvider>
         <div className="main-dev">
           <LoadingOverlay
@@ -1433,7 +1432,6 @@ class App extends Component {
           </LoadingOverlay>
         </div>
       </EventProvider>
-      </>
     );
   }
 }

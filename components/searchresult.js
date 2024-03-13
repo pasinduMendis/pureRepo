@@ -333,21 +333,11 @@ class SearchResult extends React.Component {
   render() {
     return (
       <>
-      {/* <head>
         <title>{window.location.pathname.split("/").join("")}</title>
         <meta
           name="description"
           content={window.location.pathname.split("/").join("")}
         />
-        </head> */}
-         <head>
-   <title>page app-search</title>
-        <meta
-          name="description"
-          content={`test description`}
-        />
-        <meta property="og:image" content="https://ttimages.blob.core.windows.net/property/21e11ce8-e391-4aa5-b872-c94cfbbe45f1.jpg" />
-        </head>
         <Container>
           <Row id="gMap" className="listing-results desktop">
             <Col className="results-left-col">

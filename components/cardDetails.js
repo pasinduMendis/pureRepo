@@ -65,7 +65,7 @@ class CardDetails extends React.Component {
   }
 
   openModal = (e, id) => {
-    var newurl = window.location.pathname + "?locationID=" + id;
+    var newurl = window.location.pathname + "/" + id + "?locationID=" + id;
     const newUrlOne = newurl.replaceAll(" ", "-");
     window.history.pushState({ path: newUrlOne }, "", newUrlOne);
     this.setState({ modalShow: true });
@@ -78,7 +78,7 @@ class CardDetails extends React.Component {
   };
   closeModal = () => {
     var newurl = window.location.pathname;
-    const newUrlOne = newurl.replaceAll(" ", "-");
+    const newUrlOne = newurl.split(id)[0].replaceAll(" ", "-");
     window.history.pushState({ path: newUrlOne }, "", newUrlOne);
     this.setState({ modalShow: false });
   };
@@ -178,7 +178,6 @@ class CardDetails extends React.Component {
 
     return (
       <>
-      {/* <head>
         <title>{`${listing.address} ${listing.city} ${listing.state} ${listing.zip}`}</title>
         <meta
           name="description"
@@ -187,15 +186,6 @@ class CardDetails extends React.Component {
           } ba ${this.renderSqrElementMeta()}`}
         />
         <meta property="og:image" content={listing.photos[0]} />
-        </head> */}
-         <head>
-   <title>page app</title>
-        <meta
-          name="description"
-          content={`test description`}
-        />
-        <meta property="og:image" content="https://ttimages.blob.core.windows.net/property/21e11ce8-e391-4aa5-b872-c94cfbbe45f1.jpg" />
-        </head>
 
         <Row className="g-0">
           <Col lg="5" className="modal-left">

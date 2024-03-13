@@ -1,13 +1,15 @@
 "use client";
 
 import "regenerator-runtime/runtime";
+import LoginWrapper from "../components/AppRe";
 import React, { useEffect, useState } from "react";
 
 function Page() {
   const [pathname, setPathname] = useState("");
   const [loading, setLoading] = useState(true);
   //get the pathname from the URL
-  useEffect(() => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
     if (window !== undefined) {
       const pathname = window.location.pathname;
       setLoading(false);
@@ -17,20 +19,7 @@ function Page() {
     }
   }, []);
 
-
-  return (
-    <>
-     <head>
-            <title>{window.location.pathname}</title>
-        <meta
-          name="description"
-          content={`test description`}
-        />
-        <meta property="og:image" content="https://ttimages.blob.core.windows.net/property/21e11ce8-e391-4aa5-b872-c94cfbbe45f1.jpg" />
-        </head>
-    test
-    </>
-  );
+  return <>{loading ? <div>Loading...</div> : <>{<LoginWrapper />}</>}</>;
 }
 
 export default Page;
