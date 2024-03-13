@@ -1341,6 +1341,13 @@ class App extends Component {
 
   render() {
     return (
+      <>
+       <title>22222</title>
+        <meta
+          name="description"
+          content={`test description 2222`}
+        />
+        <meta property="og:image" content="https://ttimages.blob.core.windows.net/property/21e11ce8-e391-4aa5-b872-c94cfbbe45f1.jpg" />
       <EventProvider>
         <div className="main-dev">
           <LoadingOverlay
@@ -1432,6 +1439,7 @@ class App extends Component {
           </LoadingOverlay>
         </div>
       </EventProvider>
+      </>
     );
   }
 }
