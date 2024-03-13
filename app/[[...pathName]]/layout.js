@@ -9,21 +9,38 @@ export async function generateMetadata(props) {
   console.log("prop : ", props.path1);
 
   // // fetch data
-  const response = await axios.get(REACT_APP_BASE_URL + "getOne/258410", {
+  const response = await axios.get(REACT_APP_BASE_URL + "getOne/64742", {
     headers: { "content-type": "application/json" },
   });
 
   // // optionally access and extend (rather than replace) parent metadata
   // const previousImages = (await parent).openGraph?.images || [];
 
+if(response.data){
   return {
-    title: `test ${response.data.title} ${response.data.city} ${response.data.state} ${response.data.zip}`,
-    openGraph: {
-      images: [
-        response.data.photos[0] ??
-          "https://ttimages.blob.core.windows.net/property/ff824ac6-4e3d-40c4-8c6f-f96536d0f59f.jpg",
-      ],
-    },
+  title: `${response.data.title} ${response.data.city} ${response.data.state} ${response.data.zip}`,
+  description:`${response.data.beds} br | ${
+    response.data.baths
+  } ba ${this.response.squareFootage} sqft`,
+  openGraph: {
+    images: [
+      response.data.photos[0] ??
+        "https://ttimages.blob.core.windows.net/property/ff824ac6-4e3d-40c4-8c6f-f96536d0f59f.jpg",
+    ],
+  },
+}
+  }
+  else{
+    return {
+      title: `PURE Listings`,
+      description:`PURE Listings`,
+      // openGraph: {
+      //   images: [
+      //     response.data.photos[0] ??
+      //       "https://ttimages.blob.core.windows.net/property/ff824ac6-4e3d-40c4-8c6f-f96536d0f59f.jpg",
+      //   ],
+      // },
+    }
   };
 }
 
