@@ -55,12 +55,12 @@ function Page() {
 
   return (
     <>
-      <head>
+      {/* <head>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
         <meta name="robots" content="noindex" />
         <meta property="og:image" content={metaImage} />
-      </head>
+      </head> */}
       {loading ? <div>Loading...</div> : <>{<App />}</>}
     </>
   );

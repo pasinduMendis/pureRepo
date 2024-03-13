@@ -1,26 +1,33 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import "regenerator-runtime/runtime";
 import "../globals.css";
-import reportWebVitals from "../reportWebVitals";
+import axios from "axios";
+import { REACT_APP_BASE_URL } from "../../constants";
 
 export async function generateMetadata(props) {
   // read route params
   console.log("prop : ", props.path1);
 
   // // fetch data
-  // const product = await fetch(`https://.../${id}`).then((res) => res.json());
+  const response = await axios.get(REACT_APP_BASE_URL + "getOne/258410", {
+    headers: { "content-type": "application/json" },
+  });
 
   // // optionally access and extend (rather than replace) parent metadata
   // const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    title: "test",
+    title: `test ${response.data.title} ${response.data.city} ${response.data.state} ${response.data.zip}`,
+    openGraph: {
+      images: [
+        response.data.photos[0] ??
+          "https://ttimages.blob.core.windows.net/property/ff824ac6-4e3d-40c4-8c6f-f96536d0f59f.jpg",
+      ],
+    },
   };
 }
 
 export default function RootLayout({ children }, props) {
-  console.log("props layout :", props);
-  reportWebVitals();
   return (
     <html lang="en">
       <head>
@@ -44,7 +51,7 @@ export default function RootLayout({ children }, props) {
           integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA="
           crossOrigin="anonymous"
         />
-        <title>PURE Listings</title>
+        {/* <title>PURE Listings</title> */}
       </head>
       <body>{children}</body>
     </html>

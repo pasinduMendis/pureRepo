@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import MarkerStyled from './MarkerStyled';
-import MarkerInGroupStyled from './MarkerInGroupStyled';
-import Spy from '../Spy';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import MarkerStyled from "./MarkerStyled";
+import MarkerInGroupStyled from "./MarkerInGroupStyled";
+import Spy from "../Spy";
 import { Modal } from "react-bootstrap";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-import logo from '../../images/logo.svg';
-import Carousel from 'react-bootstrap/Carousel';
-import dog from '../../images/dog.svg';
-import cat from '../../images/cat.svg';
-import Button from 'react-bootstrap/Button';
-import CardDetails from '../../cardDetails';
-
+import Carousel from "react-bootstrap/Carousel";
+import Button from "react-bootstrap/Button";
+import CardDetails from "../../cardDetails";
 
 class Marker extends Component {
   // eslint-disable-line react/prefer-stateless-function
@@ -24,7 +20,7 @@ class Marker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalShow: false
+      modalShow: false,
     };
   }
 
@@ -36,40 +32,45 @@ class Marker extends Component {
     this.setState({ modalShow: false });
   };
 
-
   renderDogElement() {
-    if (this.props.data.dogs === 'true')
-      return <img
-        src={dog}
-        width="40"
-        height="auto"
-        className="d-inline-block align-top mr-20px"
-        alt="dog"
-      />;
+    if (this.props.data.dogs === "true")
+      return (
+        <img
+          src="./images/dog.svg"
+          width="40"
+          height="auto"
+          className="d-inline-block align-top mr-20px"
+          alt="dog"
+        />
+      );
     return null;
   }
 
   renderCatElement() {
-    if (this.props.data.cats === 'true')
-      return <img
-        src={cat}
-        width="40"
-        height="auto"
-        className="d-inline-block align-top mr-20px"
-        alt="cat"
-      />;
+    if (this.props.data.cats === "true")
+      return (
+        <img
+          src="/images/cat.svg"
+          width="40"
+          height="auto"
+          className="d-inline-block align-top mr-20px"
+          alt="cat"
+        />
+      );
     return null;
   }
 
   renderPetElement() {
-    if (this.props.data.cats === 'false' && this.props.data.dogs === 'false')
-      return <div className="modal-paragraph-sm"><b>No Pets Allowed</b></div>;
+    if (this.props.data.cats === "false" && this.props.data.dogs === "false")
+      return (
+        <div className="modal-paragraph-sm">
+          <b>No Pets Allowed</b>
+        </div>
+      );
     return null;
   }
 
-
   renderSqrElement() {
-
     let regex = /\d/;
     if (regex.test(this.props.data.squareFootage)) {
       return <>/ {this.props.data.squareFootage} sqft</>;
@@ -77,7 +78,6 @@ class Marker extends Component {
   }
 
   renderDepositElement() {
-
     let regex = /\d/;
     if (regex.test(this.props.data.depositAmount)) {
       return <>$</>;
@@ -88,37 +88,49 @@ class Marker extends Component {
     // console.log('propspopup', this.props.data)
   }
 
-
   render() {
     const { data } = this.props;
     // const staticURL = 'https://rent.purepm.co/';
 
     return (
       <div>
-        {this.props.inGroup
-          ? <MarkerInGroupStyled>
+        {this.props.inGroup ? (
+          <MarkerInGroupStyled>
             <Spy scale="0.55" />
           </MarkerInGroupStyled>
-          : <MarkerStyled onClick={this.openModal} >
+        ) : (
+          <MarkerStyled onClick={this.openModal}>
             <div className="tooltiptext" onClick={this.openModal}>
               <Container>
                 <Row>
-                  <Col className="padding-0"><img className='toolTipImage' src={this.props.data.photos[0]} width="100%" alt="preview" /></Col>
+                  <Col className="padding-0">
+                    <img
+                      className="toolTipImage"
+                      src={this.props.data.photos[0]}
+                      width="100%"
+                      alt="preview"
+                    />
+                  </Col>
                   <Col className="preview-column-right">
-                    <h5 className="listing-preview-price">${this.props.data.rentAmount}</h5>
-                    <h6 className="listing-preview-details">{this.props.data.beds} Bed | {this.props.data.baths} Bath</h6>
+                    <h5 className="listing-preview-price">
+                      ${this.props.data.rentAmount}
+                    </h5>
+                    <h6 className="listing-preview-details">
+                      {this.props.data.beds} Bed | {this.props.data.baths} Bath
+                    </h6>
                   </Col>
                 </Row>
               </Container>
-
             </div>
             <Spy scale="0.55" />
-          </MarkerStyled>}
-        <Modal show={this.state.modalShow} onHide={this.closeModal} dialogClassName="listing-modal">
-          <CardDetails
-            key={data.id}
-            listing={data}
-          />
+          </MarkerStyled>
+        )}
+        <Modal
+          show={this.state.modalShow}
+          onHide={this.closeModal}
+          dialogClassName="listing-modal"
+        >
+          <CardDetails key={data.id} listing={data} />
           {/* <Modal.Header closeButton>
                 <Modal.Title className="modal-logo"><img
                       src={logo}
