@@ -17,10 +17,11 @@ function Page() {
     }
   }, []);
 
+
   return (
     <>
      <head>
-   <title>page app</title>
+            <title>{window.location.pathname}</title>
         <meta
           name="description"
           content={`test description`}
