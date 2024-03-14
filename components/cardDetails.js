@@ -25,6 +25,9 @@ import {
   EmailShareButton,
   EmailIcon,
 } from "react-share";
+import LogoSvg from "./images/logo";
+import ShareSvg from "./images/ShareSvg";
+import ReportSvg from "./images/ReportSvg";
 
 class CardDetails extends React.Component {
   constructor(props) {
@@ -192,13 +195,7 @@ class CardDetails extends React.Component {
           <Col lg="5" className="modal-left">
             <Modal.Header closeButton>
               <Modal.Title className="modal-logo">
-                <img
-                  src="./images/logo.svg"
-                  width="98"
-                  height="auto"
-                  className="d-inline-block align-top"
-                  alt="PurePM Logo"
-                />
+                <LogoSvg />
               </Modal.Title>
             </Modal.Header>
             <Modal.Body class="modal-body-full">
@@ -246,12 +243,15 @@ class CardDetails extends React.Component {
                     data-toggle="modal"
                     data-target="#exampleModalCenter"
                   >
-                    <b>Share</b>{" "}
-                    <img
-                      src="./images/share.svg"
-                      className="share"
-                      alt="PurePM Logo"
-                    />
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <b style={{ marginRight: "5px" }}>Share</b> <ShareSvg />
+                    </div>
                   </Button>
 
                   <Modal
@@ -261,11 +261,7 @@ class CardDetails extends React.Component {
                   >
                     <Modal.Header closeButton>
                       <Modal.Title className="share-the-property">
-                        <img
-                          src="./images/share.svg"
-                          className="share"
-                          alt="PurePM Logo"
-                        />
+                        <ShareSvg />
                         Share The Property
                       </Modal.Title>
                     </Modal.Header>
@@ -346,12 +342,17 @@ class CardDetails extends React.Component {
                     className="report-button"
                     onClick={(e) => this.openModalNew(e, this.props.listing.id)}
                   >
-                    <img
-                      class="report-svg"
-                      src="./images/report.svg"
-                      alt="Report Icon"
-                    />
-                    <b>Report an error on this listing</b>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                      className="report-svg"
+                    >
+                      <ReportSvg />
+                      <b className="px-2">Report an error on this listing</b>
+                    </div>
                   </Button>
 
                   <Modal
@@ -362,14 +363,20 @@ class CardDetails extends React.Component {
                   >
                     <Modal.Header closeButton>
                       <Modal.Title className="error-report-head">
-                        <img
-                          src="./images/report.svg"
-                          width="20"
-                          height="auto"
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
                           className="error-report-logo"
-                          alt="Error Report"
-                        />
-                        Error Report
+                        >
+                          <div style={{ marginRight: "10px" }}>
+                            <ReportSvg />
+                          </div>
+
+                          <div> Error Report</div>
+                        </div>
                       </Modal.Title>
                     </Modal.Header>
                     <Modal.Body className="error-report-p">

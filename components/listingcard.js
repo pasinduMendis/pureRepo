@@ -55,23 +55,20 @@ class Listingcard extends React.Component {
     // }
   }
 
-  openModal = (e, id) => {
+  openModal = async (e, id) => {
     console.log("open modal by listing");
     var newurl =
       window.location.pathname.split("/")[1] + "/" + id + "/?locationID=" + id;
-
-    console.log("open modal by listing :", newurl);
-    console.log(
-      "************************:",
-      window.location.pathname.split("/").length
-    );
     const newUrlOne = newurl.replaceAll(", ", "-");
     const newUrlTwo = newUrlOne.replaceAll(" ", "-");
     if (window.location.pathname.split("/").length !== 2) {
+      if (window.location.pathname.split("/").length === 4) {
+        this.setState({ modalShow: true });
+        return;
+      }
       var newurl2 = "/" + window.location.pathname.split("/")[1];
       window.history.pushState({ path: newurl2 }, "", newurl2);
       window.history.pushState({ path: newurl }, "", newurl);
-      this.setState({ modalShow: true });
     } else {
       window.history.pushState({ path: newUrlTwo }, "", newUrlTwo);
       this.setState({ modalShow: true });
