@@ -142,7 +142,7 @@ code {
 .empty-state-bg {
   background-color: #f4f8fc;
   height: calc(100vh - 159px);
-  background-image: url("/src/components/images/Purelogo.svg");
+  background-image: url("/src/components//imagesPurelogo.svg");
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -656,7 +656,7 @@ h6.listing-preview-details {
   .mobile-results-tabs .nav-item:first-child button:before {
     content: "";
     display: block;
-    background: url("/src/components/images/list.svg") no-repeat;
+    background: url("/src/components//imageslist.svg") no-repeat;
     width: 20px;
     height: 26px;
     float: left;
@@ -667,7 +667,7 @@ h6.listing-preview-details {
   .mobile-results-tabs .nav-item:nth-child(2) button:before {
     content: "";
     display: block;
-    background: url("/src/components/images/map.svg") no-repeat;
+    background: url("/src/components//imagesmap.svg") no-repeat;
     width: 20px;
     height: 26px;
     float: left;
@@ -736,7 +736,7 @@ h6.listing-preview-details {
   .mobile-results-tabs .nav-item:first-child button:before {
     content: "";
     display: block;
-    background: url("/src/components/images/list.svg") no-repeat;
+    background: url("/src/components//imageslist.svg") no-repeat;
     width: 20px;
     height: 26px;
     float: left;
@@ -747,7 +747,7 @@ h6.listing-preview-details {
   .mobile-results-tabs .nav-item:nth-child(2) button:before {
     content: "";
     display: block;
-    background: url("/src/components/images/map.svg") no-repeat;
+    background: url("/src/components//imagesmap.svg") no-repeat;
     width: 20px;
     height: 26px;
     float: left;

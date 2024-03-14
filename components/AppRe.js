@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -66,18 +68,19 @@ class LoginWrapper extends React.Component {
               "AIzaSyCGrAFYT6K85SUYIW7C1MVD7dXHm3islmQ"
           )
           .then((response) => {
+            console.log("response", response.data);
             if (response.data.results.length > 0) {
               var filterCity =
-                response.data.results[0].address_components.filter((result) =>
+                response.data?.results[0]?.address_components.filter((result) =>
                   result.types.includes("locality")
                 );
               var filterState =
-                response.data.results[0].address_components.filter((result) =>
-                  result.types.includes("administrative_area_level_1")
+                response.data?.results[0]?.address_components.filter((result) =>
+                  result?.types.includes("administrative_area_level_1")
                 );
 
               var total2 =
-                filterCity[0].long_name + " " + filterState[0].short_name;
+                filterCity[0]?.long_name + " " + filterState[0]?.short_name;
 
               var maploc = total2.replaceAll(" ", "-");
 

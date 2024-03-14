@@ -56,19 +56,37 @@ class Listingcard extends React.Component {
   }
 
   openModal = (e, id) => {
-    var newurl = window.location.pathname + "?locationID=" + id;
+    console.log("open modal by listing");
+    var newurl =
+      window.location.pathname.split("/")[1] + "/" + id + "/?locationID=" + id;
+
+    console.log("open modal by listing :", newurl);
+    console.log(
+      "************************:",
+      window.location.pathname.split("/").length
+    );
     const newUrlOne = newurl.replaceAll(", ", "-");
     const newUrlTwo = newUrlOne.replaceAll(" ", "-");
-    window.history.pushState({ path: newUrlTwo }, "", newUrlTwo);
-    this.setState({ modalShow: true });
+    if (window.location.pathname.split("/").length !== 2) {
+      var newurl2 = "/" + window.location.pathname.split("/")[1];
+      window.history.pushState({ path: newurl2 }, "", newurl2);
+      window.history.pushState({ path: newurl }, "", newurl);
+      this.setState({ modalShow: true });
+    } else {
+      window.history.pushState({ path: newUrlTwo }, "", newUrlTwo);
+      this.setState({ modalShow: true });
+    }
   };
   openModalNew = (e, id) => {
     this.setState({ modalShowNew: true });
   };
   closeModal = () => {
-    var newurl = window.location.pathname;
-    const newUrlOne = newurl.replaceAll(" ", "-");
-    window.history.pushState({ path: newUrlOne }, "", newUrlOne);
+    var newurl = "/" + window.location.pathname.split("/")[1];
+    // const newUrlTwo = newUrlOne.replaceAll(" ", "-");
+    // console.log("newurlListing", newurl);
+    // const newUrlOne = newurl.replaceAll(" ", "-");
+
+    window.history.pushState({ path: newurl }, "", newurl);
     this.setState({ modalShow: false });
   };
   closeModalNew = () => {
@@ -207,7 +225,7 @@ class Listingcard extends React.Component {
           dialogClassName="listing-modal main-card"
           className="listing-modal-main"
         >
-          <CardDetails key={listing.id} listing={listing} />
+          <CardDetails key={listing?.id} listing={listing} />
         </Modal>
 
         <Modal
@@ -219,7 +237,7 @@ class Listingcard extends React.Component {
           <Modal.Header closeButton>
             <Modal.Title className="error-report-head">
               <img
-                src="./images/report.svg"
+                src="/imagesreport.svg"
                 width="20"
                 height="auto"
                 className="error-report-logo"

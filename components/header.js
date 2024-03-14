@@ -4,6 +4,8 @@ import Navbar from "react-bootstrap/Navbar";
 import ReferenceLinks from "./referenceLinks";
 import { Modal } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import Image from "next/image";
+import logo from "../public/images/logo.svg";
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
@@ -22,8 +24,8 @@ const Header = () => {
         <Container className="d-flex justify-content-between">
           <Navbar.Brand>
             <a href="https://www.purepm.co/">
-              <img
-                src="./images/logo.svg"
+              <Image
+                src={logo}
                 width="98"
                 height="auto"
                 className="d-inline-block align-top logo-desk"

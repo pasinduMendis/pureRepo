@@ -9,6 +9,7 @@ import Button from "react-bootstrap/Button";
 import "photoswipe/dist/photoswipe.css";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import Form from "react-bootstrap/esm/Form";
+import logo from "../public/images/logo.svg";
 import axios from "axios";
 import {
   FacebookIcon,
