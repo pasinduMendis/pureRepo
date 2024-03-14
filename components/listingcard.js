@@ -56,7 +56,6 @@ class Listingcard extends React.Component {
   }
 
   openModal = async (e, id) => {
-    console.log("open modal by listing");
     var newurl =
       window.location.pathname.split("/")[1] + "/" + id + "/?locationID=" + id;
     const newUrlOne = newurl.replaceAll(", ", "-");

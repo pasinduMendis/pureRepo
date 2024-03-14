@@ -7,7 +7,6 @@ import { REACT_APP_BASE_URL } from "../../../constants";
 export async function generateMetadata(pathname) {
   // read route params
   console.log("prop : ", pathname);
-  console.log("idPath :", pathname?.params?.path[1]);
 
   // // fetch data
   const { data, error } = await axios.get(
