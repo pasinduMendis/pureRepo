@@ -23,8 +23,10 @@ export async function generateMetadata(pathname) {
   // const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    title: `test ${data?.title} ${data?.city} ${data?.state} ${data?.zip}`,
+    title: `${data?.title} ${data?.city} ${data?.state} ${data?.zip}`,
+    description:`${data?.beds} br | ${data?.baths} ba | ${data?.squareFootage} sqft`,
     openGraph: {
+
       images: [
         data?.photos[0] ??
           "https://ttimages.blob.core.windows.net/property/ff824ac6-4e3d-40c4-8c6f-f96536d0f59f.jpg",
