@@ -1,17 +1,17 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import "regenerator-runtime/runtime";
-import "../globals.css";
+import "../../globals.css";
 import axios from "axios";
-import { REACT_APP_BASE_URL } from "../../constants";
+import { REACT_APP_BASE_URL } from "../../../constants";
 
 export async function generateMetadata(pathname) {
   // read route params
   console.log("prop : ", pathname);
-  console.log("idPath :", pathname?.params?.pathname[1]);
+  console.log("idPath :", pathname?.params?.path[1]);
 
   // // fetch data
   const { data, error } = await axios.get(
-    REACT_APP_BASE_URL + "getOne/" + pathname?.params?.pathname[1],
+    REACT_APP_BASE_URL + "getOne/" + pathname.params.path,
     {
       headers: { "content-type": "application/json" },
     }

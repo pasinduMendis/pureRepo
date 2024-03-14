@@ -1,11 +1,9 @@
 "use client";
 
 import "regenerator-runtime/runtime";
-import LoginWrapper from "../../components/AppRe";
+import LoginWrapper from "../../../components/AppRe";
 import React, { useEffect, useState } from "react";
-import App from "../../components/App";
-import axios from "axios";
-import { REACT_APP_BASE_URL } from "../../constants";
+import App from "../../../components/App";
 
 function Page() {
   const [pathname, setPathname] = useState("");
