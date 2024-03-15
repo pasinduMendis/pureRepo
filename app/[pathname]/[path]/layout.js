@@ -18,9 +18,6 @@ export async function generateMetadata(pathname) {
 
   console.log("apiData", data);
 
-  // // optionally access and extend (rather than replace) parent metadata
-  // const previousImages = (await parent).openGraph?.images || [];
-
   return {
     title: `${data?.address} ${data?.city} ${data?.state} ${data?.zip}`,
     description:`${data?.beds} br | ${data?.baths} ba | ${data?.squareFootage} sqft`,

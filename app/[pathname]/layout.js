@@ -21,7 +21,7 @@ export default function RootLayout({ children }, props) {
           rel="stylesheet"
         />
 
-        {/* <title>PURE Listings</title> */}
+        <title>PURE Listings</title>
       </head>
       <body>{children}</body>
     </html>
