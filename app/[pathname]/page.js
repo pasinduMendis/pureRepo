@@ -54,12 +54,6 @@ function Page() {
 
   return (
     <>
-      {/* <head>
-        <title>{metaTitle}</title>
-        <meta name="description" content={metaDescription} />
-        <meta name="robots" content="noindex" />
-        <meta property="og:image" content={metaImage} />
-      </head> */}
       {loading ? (
         <div>Loading...</div>
       ) : pathname == "/searching" ? (

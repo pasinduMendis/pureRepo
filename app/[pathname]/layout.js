@@ -1,37 +1,8 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import "regenerator-runtime/runtime";
 import "../globals.css";
-import axios from "axios";
-import { REACT_APP_BASE_URL } from "../../constants";
 
-// export async function generateMetadata(pathname) {
-//   // read route params
-//   console.log("prop : ", pathname);
-//   console.log("idPath :", pathname?.params?.pathname[1]);
 
-//   // // fetch data
-//   const { data, error } = await axios.get(
-//     REACT_APP_BASE_URL + "getOne/" + pathname?.params?.pathname[1],
-//     {
-//       headers: { "content-type": "application/json" },
-//     }
-//   );
-
-//   console.log("apiData", data);
-
-//   // // optionally access and extend (rather than replace) parent metadata
-//   // const previousImages = (await parent).openGraph?.images || [];
-
-//   return {
-//     title: `test ${data?.title} ${data?.city} ${data?.state} ${data?.zip}`,
-//     openGraph: {
-//       images: [
-//         data?.photos[0] ??
-//           "https://ttimages.blob.core.windows.net/property/ff824ac6-4e3d-40c4-8c6f-f96536d0f59f.jpg",
-//       ],
-//     },
-//   };
-// }
 
 export default function RootLayout({ children }, props) {
   return (
