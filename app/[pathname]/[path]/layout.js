@@ -22,7 +22,7 @@ export async function generateMetadata(pathname) {
   // const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    title: `${data?.title} ${data?.city} ${data?.state} ${data?.zip}`,
+    title: `${data?.address} ${data?.city} ${data?.state} ${data?.zip}`,
     description:`${data?.beds} br | ${data?.baths} ba | ${data?.squareFootage} sqft`,
     openGraph: {
 
