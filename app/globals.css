@@ -191,6 +191,7 @@ h3.no-result {
 .btn.dropdown_btn.show {
   background-color: #fff;
   color: #224178;
+  border: 1px solid #d0d5dd;
 }
 
 .btn.dropdown_btn.show:hover {
