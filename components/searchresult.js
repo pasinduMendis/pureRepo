@@ -333,11 +333,6 @@ class SearchResult extends React.Component {
   render() {
     return (
       <>
-        <title>{window.location.pathname.split("/").join("")}</title>
-        <meta
-          name="description"
-          content={window.location.pathname.split("/").join("")}
-        />
         <Container>
           <Row id="gMap" className="listing-results desktop">
             <Col className="results-left-col">

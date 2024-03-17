@@ -182,14 +182,6 @@ class CardDetails extends React.Component {
 
     return (
       <>
-        <title>{`${listing.address} ${listing.city} ${listing.state} ${listing.zip}`}</title>
-        <meta
-          name="description"
-          content={`${listing.beds} br | ${
-            listing.baths
-          } ba ${this.renderSqrElementMeta()}`}
-        />
-        <meta property="og:image" content={listing.photos[0]} />
 
         <Row className="g-0">
           <Col lg="5" className="modal-left">
