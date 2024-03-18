@@ -2,34 +2,6 @@
 import "regenerator-runtime/runtime";
 import "./globals.css";
 
-// export async function generateMetadata(pathname) {
-//   // read route params
-//   console.log("prop : ", pathname);
-//   console.log("idPath :", pathname?.params?.pathname[1]);
-
-//   // // fetch data
-//   const { data, error } = await axios.get(
-//     REACT_APP_BASE_URL + "getOne/" + pathname?.params?.pathname[1],
-//     {
-//       headers: { "content-type": "application/json" },
-//     }
-//   );
-
-//   console.log("apiData", data);
-
-//   // // optionally access and extend (rather than replace) parent metadata
-//   // const previousImages = (await parent).openGraph?.images || [];
-
-//   return {
-//     title: `test ${data?.title} ${data?.city} ${data?.state} ${data?.zip}`,
-//     openGraph: {
-//       images: [
-//         data?.photos[0] ??
-//           "https://ttimages.blob.core.windows.net/property/ff824ac6-4e3d-40c4-8c6f-f96536d0f59f.jpg",
-//       ],
-//     },
-//   };
-// }
 
 export default function RootLayout({ children }, props) {
   return (
@@ -42,7 +14,7 @@ export default function RootLayout({ children }, props) {
 
         <link rel="stylesheet" href="https://use.typekit.net/eke1rvr.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
